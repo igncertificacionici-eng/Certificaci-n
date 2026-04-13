@@ -11,15 +11,13 @@ document.getElementById("btnEnviar").addEventListener("click", async () => {
   const formData = new FormData();
   formData.append("codigo", codigo);
   formData.append("tipo", tipo);
-  formData.append("archivo", archivo); 
-
+  formData.append("archivo", archivo);
 
   try {
-    const response = await fetch("https://script.google.com/macros/s/AKfycbzCOkTdnTfA4GIQvmjrzJ2OLRPFjVeiz5ECqEHd6kPXhmqHRQjdXP9tQ7M6rrcT5TZlFw/exec", {
+    const response = await fetch("TU_URL_WEBAPP", {
       method: "POST",
       body: formData
     });
-
     const result = await response.json();
     alert("Evidencia subida correctamente: " + result.url);
   } catch (error) {
